@@ -26,7 +26,7 @@ for index, (root, dirs, files) in enumerate(f_list):
     files = sorted(files, key=lambda x: int(x.split('.')[0]))
     for file in files:
         file_name = file.split('.md')[0]
-        file_relitive_path = f'./笔记/{title2}/' + file
+        file_relitive_path = f'./笔记/{title2}/' + file.replace(' ', '%20')
         md.write(f'- [{file_name}]({file_relitive_path})\n')
 
 md.close()
