@@ -23,7 +23,10 @@ for index, (root, dirs, files) in enumerate(f_list):
 
     md.write('\n## {}\n'.format(title2))
     # 对文件夹下的文件进行排序
-    files = sorted(files, key=lambda x: int(x.split('.')[0]))
+    try:
+        files = sorted(files, key=lambda x: int(x.split('.')[0]))
+    except:
+        pass
     for file in files:
         file_name = file.split('.md')[0]
         file_relitive_path = f'./笔记/{title2}/' + file.replace(' ', '%20')

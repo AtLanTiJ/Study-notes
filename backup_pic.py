@@ -48,6 +48,7 @@ def update_md_file(md_file_path, save_folder):
         if local_image_path:
             # 构建相对路径（相对于md文件所在目录）
             relative_path = os.path.relpath(local_image_path, start=os.path.dirname(md_file_path))
+            relative_path = relative_path.replace('\\', '/')  # 将反斜杠替换为斜杠
             # 替换图片链接为相对路径
             content = content.replace(image_url, relative_path)
 
@@ -94,13 +95,11 @@ def process_folder(root_folder, md_files_to_process):
 
 if __name__ == "__main__":
     # 设置目标文件夹路径
-    target_folder = './your_target_folder'  # 替换为你的目标文件夹路径
+    target_folder = './'  # 替换为你的目标文件夹路径
 
     # 指定需要处理的 Markdown 文件列表（相对于目标文件夹的路径）
     md_files = [
-        "subfolder1/file1.md",
-        "subfolder2/file3.md",
-        "file4.md"
+        "笔记/11.实战/长城杯杂项.md"
     ]
 
     process_folder(target_folder, md_files)
