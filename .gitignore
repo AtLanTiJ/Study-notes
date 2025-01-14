@@ -1,2 +1,5 @@
 .gitattributes
 hello world.md
+.vscode
+replace_path.py
+*总结*
