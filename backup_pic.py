@@ -99,7 +99,7 @@ if __name__ == "__main__":
 
     # 指定需要处理的 Markdown 文件列表（相对于目标文件夹的路径）
     md_files = [
-        "笔记/11.实战/长城杯杂项.md"
+        "笔记/11.实战/DC-1.md"
     ]
 
     process_folder(target_folder, md_files)
